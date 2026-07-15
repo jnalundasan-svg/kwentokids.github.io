@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kwento Kids – Filipino Digital Storybooks for Toddlers</title>
+  <meta name="description" content="Discover Kwento Kids – beautifully illustrated Filipino digital storybooks that teach toddlers to speak and love the Filipino language. Shop now!"/>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --sun-gold: #F5A623;
+      --deep-red: #CE1126;
+      --ocean-blue: #0038A8;
+      --leaf-green: #2E8B57;
+      --cream: #FFF8EE;
+      --warm-white: #FFFDF9;
+      --dark: #1A1A2E;
+      --text: #3D3D3D;
+      --light-gold: #FFF3D0;
+      --accent-pink: #FF6B9D;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--warm-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Baloo 2', cursive;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 3px solid var(--sun-gold);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--sun-gold), var(--deep-red));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .nav-logo .logo-text {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+
+    .nav-logo .logo-text span {
+      color: var(--deep-red);
+    }
+
+    .nav-logo .logo-sub {
+      font-size: 0.65rem;
+      color: var(--ocean-blue);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--deep-red); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--deep-red), #a00d1e);
+      color: white !important;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-weight: 800 !important;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+      box-shadow: 0 4px 15px rgba(206,17,38,0.3);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(206,17,38,0.4) !important;
+      color: white !important;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 70px;
+      background: linear-gradient(160deg, #0038A8 0%, #1a5276 40%, #0e3460 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Decorative sun rays */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(245,166,35,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    /* Baybayin-inspired decorative pattern */
+    .hero-pattern {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        radial-gradient(circle at 15% 85%, rgba(245,166,35,0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Floating stars */
+    .star {
+      position: absolute;
+      color: rgba(245,166,35,0.4);
+      font-size: 1.5rem;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+    .star:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+    .star:nth-child(2) { top: 25%; left: 90%; animation-delay: 0.5s; }
+    .star:nth-child(3) { top: 70%; left: 5%; animation-delay: 1s; }
+    .star:nth-child(4) { top: 80%; left: 92%; animation-delay: 1.5s; }
+    .star:nth-child(5) { top: 45%; left: 95%; animation-delay: 2s; }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,166,35,0.2);
+      border: 1px solid rgba(245,166,35,0.5);
+      color: var(--sun-gold);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--sun-gold);
+      display: block;
+    }
+
+    .hero-desc {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--sun-gold), #e8941a);
+      color: var(--dark);
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 25px rgba(245,166,35,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Baloo 2', cursive;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(245,166,35,0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      padding: 15px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: all 0.2s;
+      font-family: 'Baloo 2', cursive;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .trust-item .icon { font-size: 1rem; }
+
+    /* Hero visual */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-book-stack {
+      position: relative;
+      width: 340px;
+      height: 380px;
+    }
+
+    .book-card {
+      position: absolute;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-card-main {
+      width: 220px;
+      height: 280px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      border: 4px solid var(--sun-gold);
+    }
+
+    .book-card-left {
+      width: 160px;
+      height: 200px;
+      top: 30%;
+      left: -10px;
+      transform: rotate(-8deg);
+      z-index: 2;
+      opacity: 0.85;
+    }
+
+    .book-card-right {
+      width: 160px;
+      height: 200px;
+      top: 35%;
+      right: -10px;
+      transform: rotate(8deg);
+      z-index: 2;
+      opacity: 0.85;
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: white;
+      border-radius: 16px;
+      padding: 10px 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      font-weight: 700;
+      font-size: 0.8rem;
+      z-index: 10;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-badge-1 {
+      top: 5%;
+      right: 0;
+      color: var(--deep-red);
+      animation-delay: 0s;
+    }
+
+    .floating-badge-2 {
+      bottom: 10%;
+      left: -10px;
+      color: var(--ocean-blue);
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 90px 5%; }
+
+    .section-label {
+      display: inline-block;
+      background: var(--light-gold);
+      color: var(--deep-red);
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--dark);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .section-title span { color: var(--deep-red); }
+
+    .section-sub {
+      color: #666;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .section-header { margin-bottom: 55px; }
+
+    /* ─── WHY SECTION ─── */
+    .why-section {
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-section::before {
+      content: '📖';
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.04;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: 24px;
+      padding: 35px 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-top: 4px solid transparent;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .why-card:nth-child(1) { border-top-color: var(--deep-red); }
+    .why-card:nth-child(2) { border-top-color: var(--sun-gold); }
+    .why-card:nth-child(3) { border-top-color: var(--ocean-blue); }
+    .why-card:nth-child(4) { border-top-color: var(--leaf-green); }
+
+    .why-icon {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .why-card h3 {
+      font-size: 1.2rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: #666;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    /* ─── FEATURED BOOKS ─── */
+    .books-section {
+      background: white;
+      max-width: 100%;
+    }
+
+    .books-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .book-item {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: white;
+      border: 1px solid #f0f0f0;
+    }
+
+    .book-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.14);
+    }
+
+    .book-img-wrap {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .book-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .book-item:hover .book-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .book-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--deep-red);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .book-info {
+      padding: 22px;
+    }
+
+    .book-info h3 {
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .book-info .book-tagline {
+      color: #888;
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .book-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .book-age {
+      background: var(--light-gold);
+      color: var(--sun-gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .book-lang {
+      color: var(--ocean-blue);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .how-section {
+      background: linear-gradient(160deg, #0038A8 0%, #1a5276 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .how-section::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .how-section .section-title { color: white; }
+    .how-section .section-sub { color: rgba(255,255,255,0.75); }
+    .how-section .section-label {
+      background: rgba(245,166,35,0.2);
+      color: var(--sun-gold);
+    }
+
+    .how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 35px 25px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      transition: background 0.3s;
+    }
+
+    .step-card:hover {
+      background: rgba(255,255,255,0.14);
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--sun-gold), #e8941a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin: 0 auto 18px;
+    }
+
+    .step-card h3 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-section {
+      background: var(--cream);
+    }
+
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .testimonial-card:hover { transform: translateY(-4px); }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      font-size: 5rem;
+      color: var(--light-gold);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .stars {
+      color: var(--sun-gold);
+      font-size: 1rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 0.95rem;
+    }
+
+    .author-loc {
+      color: #999;
+      font-size: 0.8rem;
+    }
+
+    /* ─── CULTURAL SECTION ─── */
+    .culture-section {
+      background: white;
+      overflow: hidden;
+    }
+
+    .culture-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .culture-img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .culture-img {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .culture-img img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .culture-img:hover img { transform: scale(1.05); }
+
+    .culture-img.tall img { height: 240px; }
+
+    .culture-text .section-sub {
+      max-width: 100%;
+      margin-bottom: 24px;
+    }
+
+    .culture-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .culture-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .culture-list .check {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, var(--leaf-green), #1a6b3c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ─── STORE LINKS ─── */
+    .store-section {
+      background: linear-gradient(160deg, #FFF8EE 0%, #FFF3D0 100%);
+      text-align: center;
+    }
+
+    .store-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .store-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .store-card {
+      background: white;
+      border-radius: 24px;
+      padding: 35px 28px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      border: 2px solid transparent;
+    }
+
+    .store-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 50px rgba(0,0,0,0.14);
+      border-color: var(--sun-gold);
+    }
+
+    .store-card .store-icon {
+      font-size: 3rem;
+    }
+
+    .store-card h3 {
+      font-size: 1.15rem;
+      color: var(--dark);
+    }
+
+    .store-card p {
+      color: #888;
+      font-size: 0.88rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .store-card .store-btn {
+      background: linear-gradient(135deg, var(--deep-red), #a00d1e);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-top: 6px;
+      transition: opacity 0.2s;
+    }
+
+    .store-card:hover .store-btn { opacity: 0.9; }
+
+    /* ─── FAQ ─── */
+    .faq-section {
+      background: white;
+    }
+
+    .faq-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 22px 0;
+    }
+
+    .faq-question {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--deep-red);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      color: #666;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-top: 14px;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-section {
+      background: var(--cream);
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .contact-detail .icon-wrap {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .icon-wrap.red { background: rgba(206,17,38,0.1); }
+    .icon-wrap.blue { background: rgba(0,56,168,0.1); }
+    .icon-wrap.gold { background: rgba(245,166,35,0.15); }
+
+    .contact-detail .detail-text strong {
+      display: block;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .contact-detail .detail-text span {
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    .contact-form {
+      background: white;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+
+    .contact-form h3 {
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--dark);
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #eee;
+      border-radius: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: border-color 0.2s;
+      outline: none;
+      background: #fafafa;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--ocean-blue);
+      background: white;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--deep-red), #a00d1e);
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50px;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 20px rgba(206,17,38,0.3);
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(206,17,38,0.4);
+    }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--deep-red) 0%, #8b0000 100%);
+      text-align: center;
+      padding: 70px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter-section::before {
+      content: '✨';
+      position: absolute;
+      font-size: 150px;
+      opacity: 0.05;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .newsletter-section::after {
+      content: '📚';
+      position: absolute;
+      font-size: 150px;
+      opacity: 0.05;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .newsletter-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-section h2 {
+      color: white;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .newsletter-section p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 50px;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .newsletter-form button {
+      background: var(--sun-gold);
+      color: var(--dark);
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.2s;
+    }
+
+    .newsletter-form button:hover { transform: scale(1.05); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 5% 30px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand .logo-text {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand .logo-text span { color: var(--sun-gold); }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .social-btn:hover { background: rgba(255,255,255,0.18); }
+
+    .footer-col h4 {
+      color: white;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: var(--sun-gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p { font-size: 0.82rem; }
+
+    .footer-flag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--dark);
+      padding: 30px 5%;
+    }
+
+    .stats-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stat-item .stat-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--sun-gold);
+      display: block;
+    }
+
+    .stat-item .stat-label {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-buttons { justify-content: center; }
+      .hero-trust { justify-content: center; }
+      .hero-visual { display: none; }
+
+      .culture-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section { padding: 60px 5%; }
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── DECORATIVE DIVIDER ─── */
+    .wave-divider {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-divider svg {
+      display: block;
+      width: 100%;
+    }
+
+    /* ─── URGENCY BANNER ─── */
+    .urgency-banner {
+      background: linear-gradient(90deg, var(--deep-red), #a00d1e, var(--deep-red));
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .urgency-banner span { color: var(--sun-gold); }
+  </style>
+</head>
+<body>
+
+  <!-- Urgency Banner -->
+  <div class="urgency-banner">
+    🌟 Now Available! Filipino Digital Storybooks for Toddlers — <span>Teach Your Child Filipino Today!</span> 📚
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">📚</div>
+      <div>
+        <div class="logo-text">Kwento <span>Kids</span></div>
+        <div class="logo-sub">by Kuya Jay</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#culture">Our Mission</a></li>
+      <li><a href="#store">Shop</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#store" class="nav-cta">🛒 Shop Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <span class="star">★</span>
+    <span class="star">✦</span>
+    <span class="star">★</span>
+    <span class="star">✦</span>
+    <span class="star">★</span>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">🇵🇭 Filipino Language Learning</div>
+        <h1>
+          Raise Bilingual Kids with
+          <span class="highlight">Filipino Storybooks</span>
+          They'll Love!
+        </h1>
+        <p class="hero-desc">
+          Beautifully illustrated digital storybooks designed for toddlers — teaching the Filipino language through fun, culturally rich stories that connect children to their roots, wherever they are in the world.
+        </p>
+        <div class="hero-buttons">
+          <a href="#store" class="btn-primary">🛒 Shop the Collection</a>
+          <a href="#books" class="btn-secondary">📖 Preview Books</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><span class="icon">✅</span> Instant Digital Download</div>
+          <div class="trust-item"><span class="icon">🌍</span> Ships Worldwide</div>
+          <div class="trust-item"><span class="icon">💛</span> Made with Love</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-book-stack">
+          <div class="book-card book-card-left">
+            <img src="https://pinoykidsread.online/wp-content/uploads/2025/08/pinoy-book-reviews-for-kids-booknook-cartoon.png" alt="Filipino children's book" />
+          </div>
+          <div class="book-card book-card-main">
+            <img src="https://pinoykidsread.online/wp-content/uploads/2024/07/Filipino-childrens-book.png" alt="Featured Filipino storybook" />
+          </div>
+          <div class="book-card book-card-right">
+            <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630_eco/website/uploaded/blog-1667907521.png" alt="Filipino language book" />
+          </div>
+          <div class="floating-badge floating-badge-1">🌟 Toddler Approved!</div>
+          <div class="floating-badge floating-badge-2">🇵🇭 100% Filipino</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Filipino Language Content</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">Ages 1–5</span>
+        <span class="stat-label">Toddler-Focused Design</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">🌍</span>
+        <span class="stat-label">Global Filipino Families</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">Digital</span>
+        <span class="stat-label">Instant Access Anywhere</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Section -->
+  <section class="why-section" id="why">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-header">
+        <div class="section-label">Why Kwento Kids?</div>
+        <h2 class="section-title">More Than a Storybook —<br><span>A Cultural Bridge</span></h2>
+        <p class="section-sub">We believe every Filipino child deserves to hear, speak, and love their mother tongue — no matter where they grow up.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <span class="why-icon">🗣️</span>
+          <h3>Language First</h3>
+          <p>Every story is crafted to naturally introduce Filipino (Tagalog) words, phrases, and sentences in a way toddlers can absorb and repeat with joy.</p>
+        </div>
+        <div class="why-card fade-in">
+          <span class="why-icon">🎨</span>
+          <h3>Vibrant Filipino Art</h3>
+          <p>Our illustrations draw from rich Filipino visual traditions — from the colors of jeepneys to the warmth of sampaguita — reimagined in a modern, child-friendly style.</p>
+        </div>
+        <div class="why-card fade-in">
+          <span class="why-icon">🌏</span>
+          <h3>Made for Global Families</h3>
+          <p>Whether you're in Manila, Toronto, Dubai, or Sydney — our books help Filipino families abroad keep their language and culture alive at home.</p>
+        </div>
+        <div class="why-card fade-in">
+          <span class="why-icon">📱</span>
+          <h3>Digital & Convenient</h3>
+          <p>Instant download means no waiting. Read on any device — tablet, phone, or laptop — anytime, anywhere. Perfect for busy parents on the go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Books -->
+  <section class="books-section" id="books">
+    <div class="books-inner">
+      <div class="section-header">
+        <div class="section-label">Our Collection</div>
+        <h2 class="section-title">Stories That <span>Spark Curiosity</span></h2>
+        <p class="section-sub">Each book is thoughtfully designed to make Filipino language learning feel like an adventure, not a lesson.</p>
+      </div>
+      <div class="books-grid">
+        <div class="book-item fade-in">
+          <div class="book-img-wrap">
+            <img src="https://pinoykidsread.online/wp-content/uploads/2024/07/Filipino-childrens-book.png" alt="Mga Kulay Ko storybook" />
+            <span class="book-tag">⭐ Bestseller</span>
+          </div>
+          <div class="book-info">
+            <h3>Mga Kulay Ko</h3>
+            <p class="book-tagline">A colorful journey through Filipino words for colors, shapes, and everyday objects.</p>
+            <div class="book-meta">
+              <span class="book-age">Ages 1–3</span>
+              <span class="book-lang">🇵🇭 Filipino + English</span>
+            </div>
+          </div>
+        </div>
+        <div class="book-item fade-in">
+          <div class="book-img-wrap">
+            <img src="https://pinoykidsread.online/wp-content/uploads/2025/08/pinoy-book-reviews-for-kids-booknook-cartoon.png" alt="Pamilya Ko storybook" />
+            <span class="book-tag">❤️ Fan Favorite</span>
+          </div>
+          <div class="book-info">
+            <h3>Ang Aking Pamilya</h3>
+            <p class="book-tagline">Meet Lola, Lolo, Ate, and Kuya — a warm story about Filipino family bonds and love.</p>
+            <div class="book-meta">
+              <span class="book-age">Ages 2–4</span>
+              <span class="book-lang">🇵🇭 Filipino + English</span>
+            </div>
+          </div>
+        </div>
+        <div class="book-item fade-in">
+          <div class="book-img-wrap">
+            <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630_eco/website/uploaded/blog-1667907521.png" alt="Hayop sa Bukid storybook" />
+            <span class="book-tag">🆕 New Arrival</span>
+          </div>
+          <div class="book-info">
+            <h3>Hayop sa Bukid</h3>
+            <p class="book-tagline">Explore the Philippine countryside and learn animal names in Filipino through rhymes.</p>
+            <div class="book-meta">
+              <span class="book-age">Ages 2–5</span>
+              <span class="book-lang">🇵🇭 Filipino + English</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:45px;">
+        <a href="#store" class="btn-primary">🛒 See All Books in the Store</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-section" id="how">
+    <div class="how-inner">
+      <div class="section-header">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Start Reading in <span style="color:var(--sun-gold)">3 Easy Steps</span></h2>
+        <p class="section-sub">Getting your Filipino storybooks is quick, easy, and instant.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card fade-in">
+          <div class="step-number">1</div>
+          <h3>Browse & Choose</h3>
+          <p>Explore our growing collection of Filipino digital storybooks and pick the ones your toddler will love.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">2</div>
+          <h3>Purchase Securely</h3>
+          <p>Complete your purchase safely through our trusted online store. Multiple payment options available.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">3</div>
+          <h3>Download & Read!</h3>
+          <p>Instantly download your storybook and start reading together. Works on any device, anytime, anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture Section -->
+  <section class="culture-section" id="culture">
+    <div class="culture-inner">
+      <div class="culture-img-grid fade-in">
+        <div class="culture-img tall">
+          <img src="https://sinaunangpanahon.com/wp-content/uploads/2025/01/Filipino-art-and-culture.jpg" alt="Filipino art and culture" />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="culture-img">
+            <img src="https://as1.ftcdn.net/v2/jpg/08/88/22/36/1000_F_888223678_c2QEY3mEe1DNL70y3eNFnu9r2X9jjZrO.jpg" alt="Sampaguita flower" />
+          </div>
+          <div class="culture-img">
+            <img src="https://i.etsystatic.com/20858813/r/il/345f83/6019360509/il_fullxfull.6019360509_hck0.jpg" alt="Filipino jeepney art" />
+          </div>
+        </div>
+      </div>
+      <div class="culture-text fade-in">
+        <div class="section-label">Our Mission</div>
+        <h2 class="section-title">Rooted in Culture,<br><span>Built for the World</span></h2>
+        <p class="section-sub">
+          The Filipino language is more than words — it's a living connection to family, history, and identity. Kwento Kids was born from a simple belief: every Filipino child, wherever they are, deserves to grow up knowing their language and culture.
+        </p>
+        <ul class="culture-list">
+          <li>
+            <span class="check">✓</span>
+            <span>Stories inspired by Filipino folklore, traditions, and everyday life</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span>Bilingual content (Filipino + English) for easier learning</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span>Designed to be inclusive and relatable for global Filipino families</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span>Expanding collection — more books, more languages, more stories coming soon</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span>Created by a Filipino, for Filipino children everywhere</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-label">What Parents Say</div>
+        <h2 class="section-title">Loved by <span>Filipino Families</span> Worldwide</h2>
+        <p class="section-sub" style="margin:0 auto;">Real stories from parents who are raising bilingual children with Kwento Kids.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"My 2-year-old now says 'Mahal kita' to her lola every video call. I cried happy tears. These books are a treasure for Filipino families abroad!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#FFF3D0;">👩</div>
+            <div>
+              <div class="author-name">Maria Santos</div>
+              <div class="author-loc">🇨🇦 Toronto, Canada</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"As a Filipino dad raising kids in the US, I was worried they'd lose touch with our language. Kwento Kids made it fun and easy. My son asks for it every night!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#E8F4FD;">👨</div>
+            <div>
+              <div class="author-name">Rodel Cruz</div>
+              <div class="author-loc">🇺🇸 Los Angeles, USA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The illustrations are stunning — so colorful and culturally authentic. My daughter loves pointing at the pictures and saying the Filipino words. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#FFF0F5;">👩</div>
+            <div>
+              <div class="author-name">Ana Reyes</div>
+              <div class="author-loc">🇦🇺 Sydney, Australia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store Links -->
+  <section class="store-section" id="store">
+    <div class="store-inner">
+      <div class="section-label">Shop Now</div>
+      <h2 class="section-title">Find Us on Your <span>Favorite Platform</span></h2>
+      <p class="section-sub" style="margin:0 auto 10px;">Visit our online stores to browse the full collection and get instant access to your Filipino storybooks.</p>
+      <div class="store-cards">
+        <a href="#" class="store-card">
+          <div class="store-icon">🛍️</div>
+          <h3>Shopee</h3>
+          <p>Browse and buy directly on Shopee — fast checkout, trusted platform.</p>
+          <div class="store-btn">Visit Shopee Store →</div>
+        </a>
+        <a href="#" class="store-card">
+          <div class="store-icon">🏪</div>
+          <h3>Lazada</h3>
+          <p>Find our full collection on Lazada with secure payment options.</p>
+          <div class="store-btn">Visit Lazada Store →</div>
+        </a>
+        <a href="#" class="store-card">
+          <div class="store-icon">🌐</div>
+          <h3>Etsy</h3>
+          <p>Shop globally on Etsy — perfect for international Filipino families.</p>
+          <div class="store-btn">Visit Etsy Store →</div>
+        </a>
+      </div>
+      <p style="margin-top:30px;color:#999;font-size:0.85rem;">💬 Not sure which platform to use? <a href="#contact" style="color:var(--deep-red);font-weight:700;">Send us a message</a> and we'll help you out!</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Got <span>Questions?</span></h2>
+        <p class="section-sub" style="margin:0 auto;">Here are answers to the most common questions from our customers.</p>
+      </div>
+      <div class="faq-list" style="margin-top:40px;">
+        <div class="faq-item">
+          <div class="faq-question">What format are the digital storybooks in?</div>
+          <div class="faq-answer">Our storybooks are delivered as high-quality PDF files that can be read on any device — smartphones, tablets, laptops, or e-readers. No special app required!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are the books only in Filipino?</div>
+          <div class="faq-answer">Our books are bilingual — they feature both Filipino (Tagalog) and English text side by side, making it easy for toddlers and parents to learn together, even if the parents aren't fluent in Filipino.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What age group are the books designed for?</div>
+          <div class="faq-answer">Our current collection is designed for toddlers aged 1–5 years old. We are actively working on expanding to older age groups, so stay tuned for more!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I get a refund if I'm not satisfied?</div>
+          <div class="faq-answer">Because our products are digital downloads, we are unable to offer refunds after the file has been downloaded. However, if you experience any technical issues, please contact us and we'll make it right!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you ship physical books?</div>
+          <div class="faq-answer">Currently, we offer digital downloads only. This allows us to keep prices affordable and deliver instantly to Filipino families anywhere in the world. Physical books may be available in the future!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How can I stay updated on new releases?</div>
+          <div class="faq-answer">Subscribe to our newsletter below or follow us on social media to be the first to know about new books, promotions, and updates from Kwento Kids!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="newsletter-inner">
+      <h2>🌟 Join the Kwento Kids Family!</h2>
+      <p>Subscribe to get early access to new books, exclusive discounts, and free Filipino language tips for parents — delivered straight to your inbox.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="Enter your email address" required />
+        <button type="submit">Subscribe 🎉</button>
+      </form>
+      <p style="margin-top:16px;font-size:0.78rem;opacity:0.6;">No spam, ever. Unsubscribe anytime. 💛</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="section-label">Get in Touch</div>
+        <h2>We'd Love to <span style="color:var(--deep-red)">Hear from You!</span></h2>
+        <p>Have questions about our books, bulk orders, collaborations, or just want to say hello? Reach out — we're always happy to connect with fellow Filipino culture enthusiasts!</p>
+
+        <div class="contact-detail">
+          <div class="icon-wrap red">📧</div>
+          <div class="detail-text">
+            <strong>Email Us</strong>
+            <span>hello@kwentokids.com</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon-wrap blue">🌐</div>
+          <div class="detail-text">
+            <strong>Online Stores</strong>
+            <span>Shopee · Lazada · Etsy</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon-wrap gold">⏰</div>
+          <div class="detail-text">
+            <strong>Response Time</strong>
+            <span>Within 24–48 hours</span>
+          </div>
+        </div>
+
+        <div style="margin-top:30px;padding:20px;background:white;border-radius:20px;border-left:4px solid var(--sun-gold);">
+          <p style="color:var(--dark);font-weight:700;margin-bottom:6px;">🤝 Open to Collaborations!</p>
+          <p style="color:#666;font-size:0.9rem;line-height:1.6;">Are you a Filipino educator, content creator, or organization? We'd love to explore partnerships that help more children learn Filipino. Let's talk!</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>📬 Send Us a Message</h3>
+        <form onsubmit="handleContact(event)">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="e.g. Maria Santos" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>General Inquiry</option>
+              <option>Order / Purchase Help</option>
+              <option>Collaboration Proposal</option>
+              <option>Bulk Order Request</option>
+              <option>Technical Support</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us how we can help you..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message 🚀</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-text">Kwento <span>Kids</span></div>
+          <p>Beautifully illustrated Filipino digital storybooks for toddlers — connecting children to their language, culture, and roots, wherever they are in the world.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn">📘</a>
+            <a href="#" class="social-btn">📸</a>
+            <a href="#" class="social-btn">🎵</a>
+            <a href="#" class="social-btn">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#why">Why Kwento Kids</a></li>
+            <li><a href="#books">Our Books</a></li>
+            <li><a href="#culture">Our Mission</a></li>
+            <li><a href="#store">Shop Now</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Stores</h4>
+          <ul>
+            <li><a href="#">Shopee Store</a></li>
+            <li><a href="#">Lazada Store</a></li>
+            <li><a href="#">Etsy Store</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Kwento Kids by Kuya Jay. All rights reserved.</p>
+        <div class="footer-flag">
+          <span>🇵🇭</span>
+          <span>Made with love for Filipino children everywhere</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Scroll Animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Newsletter Form
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✅ Subscribed!';
+      btn.style.background = '#2E8B57';
+      btn.style.color = 'white';
+      setTimeout(() => {
+        btn.textContent = 'Subscribe 🎉';
+        btn.style.background = '';
+        btn.style.color = '';
+        e.target.reset();
+      }, 3000);
+    }
+
+    // Contact Form
+    function handleContact(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = '✅ Message Sent!';
+      btn.style.background = 'linear-gradient(135deg, #2E8B57, #1a6b3c)';
+      setTimeout(() => {
+        btn.textContent = 'Send Message 🚀';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
