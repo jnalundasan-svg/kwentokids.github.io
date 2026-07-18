@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuya Jay's Digital Store – Filipino Children's Books</title>
+  <meta name="description" content="Kuya Jay's Digital Store - Celebrating Filipino culture through children's books. Download ebooks that teach Tagalog, folktales, and family values." />
+  <meta property="og:title" content="Kuya Jay's Digital Store – Filipino Children's Books" />
+  <meta property="og:description" content="Joyful ebooks celebrating Filipino culture, language, and values for kids." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kuyajay.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sun:    #F9A825;
+      --sky:    #4FC3F7;
+      --leaf:   #43A047;
+      --earth:  #8D6E63;
+      --cream:  #FFF8F0;
+      --night:  #1A237E;
+      --coral:  #FF7043;
+      --white:  #FFFFFF;
+      --text:   #2E2E2E;
+      --muted:  #6B6B6B;
+      --card-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      --radius: 20px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── UTILITY ──────────────────────────────────────────────── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.75rem;
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 700;
+      border-radius: 50px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 168, 37, 0.4)nline-block;
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: .75rem;
+    }
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--night);
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-top: .5rem;
+      max-width: 560px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.75rem;
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 700;
+      border-radius: 50px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 168, 37, 0.4)nline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+    .btn-primary { background: var(--sun); color: var(--night); }
+    .btn-outline { background: transparent; border: 2.5px solid var(--night); color: var(--night); }
+    .btn-coral   { background: var(--coral); color: #fff; }
+
+    /* ─── NAV ──────────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,248,240,.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(249,168,37,.3);
+      padding: .75rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: .75rem; }
+    .nav-logo img { height: 48px; width: auto; object-fit: contain; }
+    .nav-logo-text {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--night);
+      line-height: 1.1;
+    }
+    .nav-logo-text span { color: var(--coral); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--night);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-cta { background: var(--sun); color: var(--night); padding: .5rem 1.25rem; border-radius: 50px; font-weight: 800; font-size: .9rem; transition: transform .2s; }
+    .nav-cta:hover { transform: scale(1.05); }
+
+    /* ─── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex; align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #FFF3E0 0%, #E3F2FD 60%, #E8F5E9 100%);
+    }
+    .hero-bg-stars {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        radial-gradient(circle, rgba(249,168,37,.35) 2px, transparent 2px),
+        radial-gradient(circle, rgba(79,195,247,.25) 1.5px, transparent 1.5px);
+      background-size: 80px 80px, 50px 50px;
+      background-position: 0 0, 25px 25px;
+      animation: twinkle 6s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle { from { opacity: .6; } to { opacity: 1; } }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.75rem;
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 700;
+      border-radius: 50px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 168, 37, 0.4)nline-flex; align-items: center; gap: .5rem;
+      background: rgba(249,168,37,.2);
+      border: 1.5px solid var(--sun);
+      border-radius: 50px;
+      padding: .4rem 1rem;
+      font-size: .85rem; font-weight: 700;
+      color: #7B5800;
+      margin-bottom: 1.25rem;
+    }
+    .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sun); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:.7} }
+    .hero-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--night);
+      margin-bottom: 1rem;
+    }
+    .hero-title .highlight { color: var(--coral); }
+    .hero-title .highlight2 { color: var(--leaf); }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex; gap: 2rem; margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1.5px solid rgba(0,0,0,.08);
+    }
+    .hero-stat-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--night);
+    }
+    .hero-stat-label { font-size: .8rem; color: var(--muted); font-weight: 600; }
+    .hero-visual {
+      position: relative;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .hero-books-stack {
+      position: relative;
+      width: 340px; height: 420px;
+    }
+    .hero-book {
+      position: absolute;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform .3s;
+    }
+    .hero-book:hover { transform: scale(1.04) rotate(0deg) !important; z-index: 10; }
+    .hero-book-1 { width: 200px; top: 0; left: 50%; transform: translateX(-50%) rotate(-6deg); }
+    .hero-book-2 { width: 185px; bottom: 20px; left: 10px; transform: rotate(5deg); }
+    .hero-book-3 { width: 185px; bottom: 20px; right: 10px; transform: rotate(-4deg); }
+    .hero-book img { width: 100%; height: auto; }
+
+    /* ─── TESTIMONIALS ─────────────────────────────────────────── */
+    .testimonials-section {
+      padding: 5rem 2rem;
+      background: var(--night);
+      text-align: center;
+    }
+    .testimonials-section .section-title { color: var(--white); }
+    .testimonials-section .section-sub { color: rgba(255,255,255,.65); margin: .5rem auto 3rem; }
+    .testi-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .testi-card {
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: left;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .testi-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,.3); }
+    .testi-stars {
+      display: flex; gap: .3rem; margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    .testi-text {
+      color: rgba(255,255,255,.9);
+      font-size: .95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testi-author {
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .testi-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--sun);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      color: var(--night);
+      font-size: 1.2rem;
+    }
+    .testi-info strong {
+      display: block; color: var(--white); font-size: .95rem;
+    }
+    .testi-info span {
+      display: block; color: rgba(255,255,255,.65); font-size: .8rem;
+    }
+
+    /* ─── BUNDLE ───────────────────────────────────────────────── */
+    .bundle-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #FFF3E0 0%, #E3F2FD 100%);
+      display: flex; align-items: center; justify-content: center;
+      min-height: 80vh;
+    }
+    .bundle-card {
+      max-width: 500px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,.15);
+      text-align: center;
+    }
+    .bundle-header {
+      margin-bottom: 2rem;
+    }
+    .bundle-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.75rem;
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 700;
+      border-radius: 50px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 168, 37, 0.4)nline-block;
+      background: var(--coral);
+      color: var(--white);
+      font-weight: 800;
+      font-size: .75rem;
+      padding: .35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .bundle-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--night);
+      margin-bottom: .5rem;
+    }
+    .bundle-desc {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 2rem;
+    }
+    .bundle-pricing {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .bundle-price-label {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+    .bundle-price {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .bundle-original {
+      font-size: 1.2rem;
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+    .bundle-current {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--coral);
+    }
+    .bundle-save {
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 800;
+      font-size: .8rem;
+      padding: .5rem 1rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.75rem;
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 700;
+      border-radius: 50px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 168, 37, 0.4)nline-block;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .bundle-features {
+      text-align: left;
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      list-style: none;
+    }
+    .bundle-features li {
+      padding: .6rem 0;
+      color: var(--text);
+      font-size: .9rem;
+      display: flex; align-items: center;
+      gap: .5rem;
+    }
+    .bundle-features li:before {
+      content: "✓";
+      font-weight: 800;
+      color: var(--leaf);
+      font-size: 1.2rem;
+    }
+    .bundle-btn {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: var(--sun);
+      color: var(--night);
+      font-weight: 800;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .bundle-btn:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(249,168,37,.4); }
+
+    /* ─── ABOUT ────────────────────────────────────────────────── */
+    .about-section {
+      padding: 5rem 2rem;
+      background: var(--white);
+    }
+    .about-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .about-logo-wrap {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .about-logo-wrap img {
+      width: 280px;
+      height: auto;
+      max-width: 100%;
+    }
+    .about-content h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--night);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .about-content h2 span {
+      color: var(--coral);
+    }
+    .about-text {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .about-links {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .about-link {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 700;
+      color: var(--night);
+      transition: transform .2s, background .2s;
+    }
+    .about-link:hover { transform: translateY(-4px); background: var(--sun); }
+
+    /* ─── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: var(--night);
+      color: rgba(255,255,255,.7);
+      text-align: center;
+      padding: 2rem;
+      font-size: .9rem;
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-inner, .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .about-links { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  
+    /* ─── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .section-title { font-size: 1.8rem; }
+      .about-links { flex-direction: column; }
+      body { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-text">Kuya Jay's<br/><span>Stories</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#books">Books</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#bundle">Bundle</a>
+      <a href="#about">About</a>
+    </div>
+    <a href="#bundle" class="nav-cta">🛒 Shop Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-stars"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>New Collection Available</span>
+        </div>
+        <h1 class="hero-title">
+          Mga Kuwento na <span class="highlight">Nagugustuhan</span> ng <span class="highlight2">Bawat Bata</span>
+        </h1>
+        <p class="hero-desc">
+          Discover Filipino children's stories that inspire imagination, celebrate culture, and create lasting memories. Perfect for young readers exploring the magic of our heritage.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary">📚 Explore Books</button>
+          <button class="btn btn-outline">Learn More</button>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">10K+</div>
+            <div class="hero-stat-label">Happy Readers</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Stories</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Filipino Made</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-books-stack">
+          <div class="hero-book hero-book-1">
+            <img src="https://via.placeholder.com/200x280?text=Book+1" alt="Book">
+          </div>
+          <div class="hero-book hero-book-2">
+            <img src="https://via.placeholder.com/185x260?text=Book+2" alt="Book">
+          </div>
+          <div class="hero-book hero-book-3">
+            <img src="https://via.placeholder.com/185x260?text=Book+3" alt="Book">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / REVIEWS -->
+  <section class="testimonials-section" id="testimonials">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <span class="section-label">⭐ What Readers Say</span>
+      <h2 class="section-title">Real Reviews from Happy Families</h2>
+      <p class="section-sub">Join thousands of families who've discovered the magic of Kuya Jay's stories</p>
+      
+      <div class="testi-grid">
+        <!-- Review 1 -->
+        <div class="testi-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-text">"My daughter reads these stories every night! She loves the Filipino characters and vibrant illustrations. Highly recommended!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MR</div>
+            <div class="testi-info">
+              <strong>Maria Rodriguez</strong>
+              <span>Parent, Manila</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testi-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-text">"These books helped my son connect with his roots. The stories are engaging, educational, and beautifully designed. Worth every peso!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JT</div>
+            <div class="testi-info">
+              <strong>Juan Torres</strong>
+              <span>Educator, Cebu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testi-card">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testi-text">"Perfect gift for my nephew! The storytelling is captivating and the digital format is so convenient. Salamat, Kuya Jay!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AC</div>
+            <div class="testi-info">
+              <strong>Ana Cruz</strong>
+              <span>Book Lover, Davao</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLE OFFER -->
+  <section class="bundle-section" id="bundle">
+    <div class="bundle-card">
+      <div class="bundle-header">
+        <span class="bundle-label">🎁 Best Deal</span>
+        <h2 class="bundle-title">Complete Bundle</h2>
+        <p class="bundle-desc">Get all 3 books in one amazing package!</p>
+      </div>
+
+      <div class="bundle-pricing">
+        <div class="bundle-price-label">SPECIAL BUNDLE PRICE</div>
+        <div class="bundle-price">
+          <span class="bundle-original">₱399</span>
+          <span class="bundle-current">₱299</span>
+        </div>
+        <span class="bundle-save">Save ₱100!</span>
+      </div>
+
+      <ul class="bundle-features">
+        <li>All 3 Books Included</li>
+        <li>Instant Digital Delivery</li>
+        <li>Lifetime Access</li>
+        <li>Beautiful PDF Format</li>
+        <li>Perfect for All Ages</li>
+      </ul>
+
+      <button class="bundle-btn" onclick="window.open('https://gumroad.com', '_blank')">
+        🛒 Get Bundle Now →
+      </button>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-logo-wrap">
+        <img src="https://via.placeholder.com/280x280?text=Kuya+Jay+Logo" alt="Kuya Jay Logo">
+      </div>
+      <div class="about-content">
+        <h2>About <span>Kuya Jay's Stories</span></h2>
+        
+        <p class="about-text">
+          Hi! I'm Jay, a passionate Filipino storyteller dedicated to creating children's books that celebrate our rich culture and heritage. Each story is crafted with love to inspire young minds and connect them with the magic of Filipino traditions.
+        </p>
+
+        <p class="about-text">
+          Through vibrant illustrations and engaging narratives, I hope to nurture a generation of readers who are proud of their roots and excited about learning. Every book is more than just a story—it's a journey into the heart of what makes us Filipino.
+        </p>
+
+        <p class="about-text">
+          Join me in spreading the joy of reading and the beauty of our culture, one story at a time!
+        </p>
+
+        <div class="about-links">
+          <a href="mailto:hello@kuyajay.com" class="about-link">✉️ Get in Touch</a>
+          <a href="#about" class="about-link">👥 Join Community</a>
+          <a href="https://instagram.com/kuyajaystories" target="_blank" rel="noopener noreferrer" class="about-link">📱 Follow Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Kuya Jay's Stories. All rights reserved. | Made with ❤️ for Filipino families</p>
+  </footer>
+
+  <script>
+    // Smooth scroll behavior for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
