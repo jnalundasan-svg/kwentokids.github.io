@@ -873,6 +873,11 @@
         <div class="flip-caption" id="flipCaption">Si Kiko Ang Bahay Kubo — Cover</div>
       </div>
       <div class="music-note">🎵 Soft music plays</div>
+      <button class="flip-play-btn" aria-label="Play flipbook carousel">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
     </div>
   </div>
 
@@ -1000,10 +1005,10 @@
           out for others.
         </p>
         <div class="book-themes">
-          <span class="theme-tag">🌈 Dreams</span>
-          <span class="theme-tag">💊 Caring</span>
-          <span class="theme-tag">🦁 Courage</span>
-          <span class="theme-tag">👨‍👩‍👦 Family</span>
+          <span class="theme-tag">💭 Dreams</span>
+          <span class="theme-tag">🦸 Courage</span>
+          <span class="theme-tag">❤️ Compassion</span>
+          <span class="theme-tag">🌱 Growth</span>
         </div>
       </div>
       <div class="book-footer">
@@ -1016,23 +1021,23 @@
     <div class="book-card">
       <div class="book-cover-wrap">
         <img src="assets/lola/cover.jpeg" alt="Ang Kuwento ni Lola Nena Cover" />
-        <div class="book-badge">💜 Bestseller</div>
-        <div class="book-age">Ages 3–7</div>
+        <div class="book-badge">💚 Bestseller</div>
+        <div class="book-age">Ages 4–7</div>
       </div>
       <div class="book-info">
-        <div class="book-subtitle">Emotions &amp; Wisdom</div>
+        <div class="book-subtitle">Emotions &amp; Connection</div>
         <h3 class="book-title">Ang Kuwento ni Lola Nena</h3>
         <p class="book-desc">
-          Lola Nena has lived a long, full life — and she has stories to tell. Through her
-          gentle wisdom, children learn to understand and cope with difficult emotions like
-          sadness, longing, and change. A tender intergenerational story that celebrates
-          the bond between grandparents and grandchildren.
+          When Lola Nena's grandchild feels sad, confused, or angry, she knows just what
+          to do. Through gentle wisdom and unconditional love, she teaches that all feelings
+          are okay. A touching multigenerational story about emotional intelligence and
+          family bonds.
         </p>
         <div class="book-themes">
-          <span class="theme-tag">💜 Emotions</span>
-          <span class="theme-tag">👵 Grandparents</span>
-          <span class="theme-tag">🌙 Wisdom</span>
-          <span class="theme-tag">🌺 Heritage</span>
+          <span class="theme-tag">🧠 Emotions</span>
+          <span class="theme-tag">👵 Wisdom</span>
+          <span class="theme-tag">❣️ Family</span>
+          <span class="theme-tag">🌟 Acceptance</span>
         </div>
       </div>
       <div class="book-footer">
@@ -1040,7 +1045,6 @@
         <button class="btn-buy" onclick="window.open('https://jnalundasan.gumroad.com','_blank')">Get Book →</button>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -1049,451 +1053,121 @@
 ════════════════════════════════════════════════════════════════ -->
 <section class="inside-section" id="inside">
   <div class="inside-header">
-    <div class="section-label">Sample Spreads</div>
-    <h2 class="section-title">What's Inside Each Book</h2>
-    <p class="section-sub" style="margin:.5rem auto 0">Click any spread to view it larger. Switch between books below.</p>
+    <div class="section-label">Interior Pages</div>
+    <h2 class="section-title">What's Inside</h2>
+    <p class="section-sub">Click on any spread to zoom in &amp; explore the beautiful illustrations</p>
   </div>
 
   <div class="book-tabs">
-    <button class="tab-btn active" onclick="switchTab('kiko', this)">📖 Si Kiko</button>
-    <button class="tab-btn" onclick="switchTab('emilio', this)">📖 Ang Pangarap ni Emilio</button>
-    <button class="tab-btn" onclick="switchTab('lola', this)">📖 Ang Kuwento ni Lola Nena</button>
+    <button class="tab-btn active">Si Kiko</button>
+    <button class="tab-btn">Emilio</button>
+    <button class="tab-btn">Lola Nena</button>
   </div>
 
   <!-- Kiko Spreads -->
-  <div class="spreads-panel active" id="panel-kiko">
+  <div class="spreads-panel active">
     <div class="spreads-grid">
-      <div class="spread-card wide" onclick="openLightbox('assets/kiko/cover.jpeg')">
+      <div class="spread-card">
         <img src="assets/kiko/cover.jpeg" alt="Kiko Cover" />
-        <div class="spread-label">📖 Cover — Meet Kiko, the Bahay Kubo</div>
+        <div class="spread-label">Cover</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/kiko/spread1.jpeg')">
+      <div class="spread-card">
         <img src="assets/kiko/spread1.jpeg" alt="Kiko Spread 1" />
-        <div class="spread-label">🌙 Kiko Whispers Hope at Night</div>
+        <div class="spread-label">The Storm Arrives</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/kiko/spread2.jpeg')">
+      <div class="spread-card">
         <img src="assets/kiko/spread2.jpeg" alt="Kiko Spread 2" />
-        <div class="spread-label">🤝 Bayanihan — Neighbors Carry Kiko</div>
+        <div class="spread-label">Bayanihan: Everyone Helps</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/kiko/spread3.jpeg')">
+      <div class="spread-card wide">
         <img src="assets/kiko/spread3.jpeg" alt="Kiko Spread 3" />
-        <div class="spread-label">🏡 The Whole Barangay Helps Rebuild</div>
+        <div class="spread-label">Kiko's Home is Rebuilt</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/kiko/spread4.jpeg')">
+      <div class="spread-card wide">
         <img src="assets/kiko/spread4.jpeg" alt="Kiko Spread 4" />
-        <div class="spread-label">💛 Kiko Feels Loved &amp; Stronger</div>
-      </div>
-      <div class="spread-card" onclick="openLightbox('assets/kiko/spread5.jpeg')">
-        <img src="assets/kiko/spread5.jpeg" alt="Kiko Spread 5" />
-        <div class="spread-label">🌟 Sama-sama — Together We Rise</div>
+        <div class="spread-label">A Lesson in Community</div>
       </div>
     </div>
   </div>
 
   <!-- Emilio Spreads -->
-  <div class="spreads-panel" id="panel-emilio">
+  <div class="spreads-panel">
     <div class="spreads-grid">
-      <div class="spread-card wide" onclick="openLightbox('assets/emilio/cover.jpeg')">
+      <div class="spread-card">
         <img src="assets/emilio/cover.jpeg" alt="Emilio Cover" />
-        <div class="spread-label">📖 Cover — Emilio's Big Dream</div>
+        <div class="spread-label">Cover</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/emilio/spread1.jpeg')">
+      <div class="spread-card">
         <img src="assets/emilio/spread1.jpeg" alt="Emilio Spread 1" />
-        <div class="spread-label">☀️ Emilio Wakes Up Full of Joy</div>
+        <div class="spread-label">A Big Dream</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/emilio/spread2.jpeg')">
+      <div class="spread-card">
         <img src="assets/emilio/spread2.jpeg" alt="Emilio Spread 2" />
-        <div class="spread-label">🌿 Helping Lola in the Garden</div>
+        <div class="spread-label">Helping His Family</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/emilio/spread3.jpeg')">
+      <div class="spread-card wide">
         <img src="assets/emilio/spread3.jpeg" alt="Emilio Spread 3" />
-        <div class="spread-label">💛 Caring is Something Everyone Shares</div>
+        <div class="spread-label">The Choice</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/emilio/spread4.jpeg')">
+      <div class="spread-card wide">
         <img src="assets/emilio/spread4.jpeg" alt="Emilio Spread 4" />
-        <div class="spread-label">🦁 Courage to Make Hard Choices</div>
-      </div>
-      <div class="spread-card" onclick="openLightbox('assets/emilio/spread5.jpeg')">
-        <img src="assets/emilio/spread5.jpeg" alt="Emilio Spread 5" />
-        <div class="spread-label">🌈 Emilio's Dream Takes Shape</div>
+        <div class="spread-label">Emilio's Journey</div>
       </div>
     </div>
   </div>
 
   <!-- Lola Nena Spreads -->
-  <div class="spreads-panel" id="panel-lola">
+  <div class="spreads-panel">
     <div class="spreads-grid">
-      <div class="spread-card wide" onclick="openLightbox('assets/lola/cover.jpeg')">
+      <div class="spread-card">
         <img src="assets/lola/cover.jpeg" alt="Lola Nena Cover" />
-        <div class="spread-label">📖 Cover — Lola Nena Under the Stars</div>
+        <div class="spread-label">Cover</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/lola/spread1.jpeg')">
-        <img src="assets/lola/spread1.jpeg" alt="Lola Nena Spread 1" />
-        <div class="spread-label">🌾 Community Life &amp; Shared Work</div>
+      <div class="spread-card">
+        <img src="assets/lola/spread1.jpeg" alt="Lola Spread 1" />
+        <div class="spread-label">When We Feel Sad</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/lola/spread2.jpeg')">
-        <img src="assets/lola/spread2.jpeg" alt="Lola Nena Spread 2" />
-        <div class="spread-label">💜 Understanding Difficult Emotions</div>
+      <div class="spread-card">
+        <img src="assets/lola/spread2.jpeg" alt="Lola Spread 2" />
+        <div class="spread-label">Lola's Comfort</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/lola/spread3.jpeg')">
-        <img src="assets/lola/spread3.jpeg" alt="Lola Nena Spread 3" />
-        <div class="spread-label">🌙 Lola's Stories Light the Night</div>
+      <div class="spread-card wide">
+        <img src="assets/lola/spread3.jpeg" alt="Lola Spread 3" />
+        <div class="spread-label">All Feelings Are Okay</div>
       </div>
-      <div class="spread-card" onclick="openLightbox('assets/lola/spread4.jpeg')">
-        <img src="assets/lola/spread4.jpeg" alt="Lola Nena Spread 4" />
-        <div class="spread-label">👵 Wisdom Passed Through Generations</div>
-      </div>
-      <div class="spread-card" onclick="openLightbox('assets/lola/spread5.jpeg')">
-        <img src="assets/lola/spread5.jpeg" alt="Lola Nena Spread 5" />
-        <div class="spread-label">🌺 Coping with Change &amp; Loss</div>
+      <div class="spread-card wide">
+        <img src="assets/lola/spread4.jpeg" alt="Lola Spread 4" />
+        <div class="spread-label">Wisdom Through Generations</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     LIFESTYLE PHOTOS
+     LIGHTBOX
 ════════════════════════════════════════════════════════════════ -->
-<section class="lifestyle-section">
-  <div class="lifestyle-header">
-    <div class="section-label">Reading Moments</div>
-    <h2 class="section-title">Books Made for Real Life</h2>
-    <p class="section-sub" style="margin:.5rem auto 0">Perfect for bedtime, classroom corners, and quiet afternoon reads.</p>
-  </div>
-
-  <div class="lifestyle-mosaic">
-    <div class="lf-card lf-1">
-      <img src="assets/emilio/spread2.jpeg" alt="Parent and child reading together" />
-      <div class="lf-caption">📚 Parent &amp; Child Reading Time</div>
-    </div>
-    <div class="lf-card lf-2">
-      <img src="assets/kiko/spread2.jpeg" alt="Book on toddler's table" />
-      <div class="lf-caption">🏡 On the Toddler's Bookshelf</div>
-    </div>
-    <div class="lf-card lf-3">
-      <img src="assets/lola/spread1.jpeg" alt="Bedtime reading" />
-      <div class="lf-caption">🌙 Bedtime Story Ritual</div>
-    </div>
-    <div class="lf-card lf-4">
-      <img src="assets/kiko/spread3.jpeg" alt="Community values lesson" />
-      <div class="lf-caption">🤝 Learning Filipino Values</div>
-    </div>
-    <div class="lf-card lf-5">
-      <img src="assets/lola/spread3.jpeg" alt="Grandparent reading to grandchild" />
-      <div class="lf-caption">👵 Lola &amp; Apo Bonding</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     TESTIMONIALS
-════════════════════════════════════════════════════════════════ -->
-<section class="testimonials-section" id="testimonials">
-  <div class="testimonials-header">
-    <div class="section-label" style="background:rgba(249,168,37,.2);color:var(--sun);">Why Parents Love This</div>
-    <h2 class="section-title">Real Families, Real Stories</h2>
-    <p class="section-sub">Hear from parents and educators who've shared these books with their little ones.</p>
-  </div>
-
-  <div class="testimonials-grid">
-
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">
-        "My 4-year-old asks for Si Kiko every single night. She now talks about 'bayanihan'
-        with her cousins — I never expected a picture book to spark that kind of conversation.
-        Kuya Jay has a real gift for storytelling."
-      </p>
-      <div class="testi-author">
-        <div class="testi-avatar">M</div>
-        <div>
-          <div class="testi-name">Maria Santos</div>
-          <div class="testi-role">Mom of 2 · Quezon City</div>
-          <div class="testi-book-tag">📖 Si Kiko Ang Bahay Kubo</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">
-        "As a Filipino-American parent, I've been searching for books that connect my son
-        to his roots. Ang Pangarap ni Emilio does exactly that — in both languages! The
-        illustrations are stunning and the message about courage is so powerful."
-      </p>
-      <div class="testi-author">
-        <div class="testi-avatar">R</div>
-        <div>
-          <div class="testi-name">Rowena Cruz</div>
-          <div class="testi-role">Mom · San Francisco, CA</div>
-          <div class="testi-book-tag">📖 Ang Pangarap ni Emilio</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">
-        "Ang Kuwento ni Lola Nena helped me explain to my 5-year-old why she felt sad
-        when her lola passed away. The book opened a door I didn't know how to open.
-        I cried reading it. My daughter understood. That's the power of this book."
-      </p>
-      <div class="testi-author">
-        <div class="testi-avatar">J</div>
-        <div>
-          <div class="testi-name">Jerome Reyes</div>
-          <div class="testi-role">Dad · Cebu City</div>
-          <div class="testi-book-tag">📖 Ang Kuwento ni Lola Nena</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">
-        "I use all three books in my preschool classroom. The bilingual format is perfect —
-        my students who speak Tagalog at home feel seen, and my English-dominant students
-        are learning Filipino naturally. Highly recommend for educators!"
-      </p>
-      <div class="testi-author">
-        <div class="testi-avatar">A</div>
-        <div>
-          <div class="testi-name">Ana Villanueva</div>
-          <div class="testi-role">Preschool Teacher · Manila</div>
-          <div class="testi-book-tag">📖 All Three Books</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">
-        "The activity pages at the end are genius! My twins (age 6) spent an entire
-        afternoon coloring and answering the reflection questions. These books don't
-        just entertain — they teach. Worth every peso."
-      </p>
-      <div class="testi-author">
-        <div class="testi-avatar">L</div>
-        <div>
-          <div class="testi-name">Liza Mendoza</div>
-          <div class="testi-role">Mom of twins · Davao City</div>
-          <div class="testi-book-tag">📖 Si Kiko Ang Bahay Kubo</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">
-        "I gifted the bundle to my niece for her birthday and her parents messaged me
-        saying she's been reading them on repeat. The illustrations are so warm and
-        detailed — you can tell so much love went into every page."
-      </p>
-      <div class="testi-author">
-        <div class="testi-avatar">C</div>
-        <div>
-          <div class="testi-name">Carlo Bautista</div>
-          <div class="testi-role">Tito · Makati City</div>
-          <div class="testi-book-tag">📖 Complete Bundle</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     BUNDLE CTA
-════════════════════════════════════════════════════════════════ -->
-<section class="bundle-section" id="bundle">
-  <div class="bundle-card">
-    <div class="bundle-badge">🎉 Best Value</div>
-    <h2 class="bundle-title">Get the Complete Bundle</h2>
-    <p class="bundle-desc">All three books + bonus activity pages — everything your little reader needs.</p>
-
-    <div class="bundle-books">
-      <div class="bundle-book-thumb">
-        <img src="assets/kiko/cover.jpeg" alt="Si Kiko" />
-      </div>
-      <div class="bundle-book-thumb">
-        <img src="assets/emilio/cover.jpeg" alt="Ang Pangarap ni Emilio" />
-      </div>
-      <div class="bundle-book-thumb">
-        <img src="assets/lola/cover.jpeg" alt="Ang Kuwento ni Lola Nena" />
-      </div>
-    </div>
-
-    <div class="bundle-price-row">
-      <div class="bundle-original">₱597</div>
-      <div class="bundle-price">₱449</div>
-      <div class="bundle-save">Save ₱148!</div>
-    </div>
-
-    <div class="bundle-features">
-      <div class="bundle-feat">3 Full Digital Books</div>
-      <div class="bundle-feat">Bonus Activity Pages</div>
-      <div class="bundle-feat">Bilingual (Filipino &amp; English)</div>
-      <div class="bundle-feat">Instant Download</div>
-      <div class="bundle-feat">Print-Friendly Format</div>
-    </div>
-
-    <a href="https://jnalundasan.gumroad.com" target="_blank" class="btn btn-coral" style="font-size:1.1rem;padding:1rem 2.5rem;">
-      🛒 Get the Bundle Now
-    </a>
-    <p style="margin-top:1rem;font-size:.82rem;color:var(--muted);">
-      Also available individually at ₱199 each · Secure checkout via Gumroad
-    </p>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     ABOUT
-════════════════════════════════════════════════════════════════ -->
-<section class="about-section" id="about">
-  <div class="about-inner">
-    <div class="about-logo-wrap">
-      <img src="assets/logo.png" alt="Kuya Jay's Digital Store" />
-      <div class="about-links">
-        <a href="https://www.raket.ph/jnalundasan" target="_blank" class="about-link">raket.ph/jnalundasan</a>
-        <a href="https://jnalundasan.gumroad.com" target="_blank" class="about-link">jnalundasan.gumroad.com</a>
-      </div>
-    </div>
-    <div class="about-text">
-      <div class="section-label">About the Creator</div>
-      <h2 class="section-title">Hi, I'm Kuya Jay! 👋</h2>
-      <p>
-        I'm a Filipino author, illustrator, and educator passionate about creating learning
-        tools that celebrate our culture and help young children grow into kind, emotionally
-        intelligent human beings.
-      </p>
-      <p>
-        Every book in this store is crafted with love — from the warm, hand-drawn illustrations
-        to the carefully chosen words that speak directly to a child's heart. My goal is simple:
-        to give Filipino children stories they can see themselves in, and to give parents and
-        teachers tools that make meaningful conversations easier.
-      </p>
-      <p>
-        Whether you're a parent, a lola, a teacher, or a tito/tita — thank you for being here.
-        These stories are for the little ones in your life. 💛
-      </p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
-        <a href="https://jnalundasan.gumroad.com" target="_blank" class="btn btn-primary">Visit My Store</a>
-        <a href="https://www.raket.ph/jnalundasan" target="_blank" class="btn btn-outline">Hire Me</a>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="lightbox">
+  <button class="lightbox-close" aria-label="Close lightbox">✕</button>
+  <img src="" alt="Lightbox view" />
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════════════════════════ -->
 <footer>
-  <p>© 2026 <strong>Kuya Jay's Digital Store</strong> · All rights reserved · Made with 💛 in the Philippines</p>
+  <p>Made with 💚 for Filipino families everywhere</p>
+  <p style="font-size: .75rem; margin-top: .5rem; color: rgba(255,255,255,.4);">© 2024 <strong>Kuya Jay's Digital Store</strong>. All rights reserved.</p>
   <div class="footer-links">
-    <a href="#books">Books</a>
-    <a href="#inside">Preview</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="#bundle">Bundle</a>
-    <a href="https://jnalundasan.gumroad.com" target="_blank">Gumroad Store</a>
-    <a href="https://www.raket.ph/jnalundasan" target="_blank">Raket.ph</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Contact</a>
   </div>
 </footer>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     LIGHTBOX
+     SCRIPTS
 ════════════════════════════════════════════════════════════════ -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img id="lightboxImg" src="" alt="Book spread preview" />
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════
-     JAVASCRIPT
-════════════════════════════════════════════════════════════════ -->
-<script>
-  /* ── Flip Preview ─────────────────────────────────────────── */
-  const slides = document.querySelectorAll('.flip-slide');
-  const caption = document.getElementById('flipCaption');
-  const controlsEl = document.getElementById('flipControls');
-  let current = 0;
-  let playing = true;
-  let timer;
-
-  // Build dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'flip-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Go to slide ' + (i+1));
-    dot.addEventListener('click', () => goTo(i));
-    controlsEl.appendChild(dot);
-  });
-
-  function goTo(idx) {
-    slides[current].classList.remove('active');
-    controlsEl.children[current].classList.remove('active');
-    current = idx;
-    slides[current].classList.add('active');
-    controlsEl.children[current].classList.add('active');
-    caption.textContent = slides[current].dataset.caption;
-  }
-
-  function next() { goTo((current + 1) % slides.length); }
-
-  function startAuto() {
-    clearInterval(timer);
-    timer = setInterval(next, 2800);
-  }
-
-  startAuto();
-
-  /* ── Tab Switcher ─────────────────────────────────────────── */
-  function switchTab(book, btn) {
-    document.querySelectorAll('.spreads-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('panel-' + book).classList.add('active');
-    btn.classList.add('active');
-  }
-
-  /* ── Lightbox ─────────────────────────────────────────────── */
-  function openLightbox(src) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
-  /* ── Smooth scroll for nav ────────────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  /* ── Intersection Observer for fade-in ───────────────────── */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.book-card, .testi-card, .value-item, .spread-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity .5s ease, transform .5s ease';
-    observer.observe(el);
-  });
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
